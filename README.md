@@ -6,5 +6,5 @@
 ### Instal XAMPP
 * Unduh XAMPP dari http://www.apechefriends.org/download.html dan pilih versi portable untuk memudahkan proses instalasi. kemudian exctract file tersebut, sesuaikan directorinya (misal: c:\xampp).<br>
 > contoh gambar<br>
-[gambar1](screenshot/a.png)
+[Gambar1](screenshot/a.png)
 
