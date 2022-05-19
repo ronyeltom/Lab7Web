@@ -196,4 +196,91 @@ contoh gambar:<br>
 ![gambar14](screenshot/20.png)
 
 
+## Pertanyaan dan Tugas
+* Buatlah program PHP sederhana dengan menggunakan form input yang menampilkan nama, tanggal lahir dan pekerjaan. Kemudian tampilkan outputnya dengan menghitung umur berdasarkan inputan tanggal lahir. Dan pilihan pekerjaan dengan gaji yang berbeda-beda sesuai pilihan pekerjaan.
+
+### Membuat Form Input
+* Pertama tama membuat form input nya, berikut kodinganya.
+
+```<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Dasar</title>
+</head>
+    <body>
+        <h2>Form Input</h2>
+        <form style="" action="hasil_form.php" method="post">
+            Nama :
+                <input type="text" name="nama" id="nama">
+                <br>
+            Tanggal Lahir :
+            <input type="date" name="tgl_lahir" id="tgl_lahir">
+                <br>
+            Pekerjaan :
+                <select name="pekerjaan" id="pekerjaan">
+                    <option value="guru">Guru</option>
+                    <option value="karyawan">Karyawan Swasta</option>
+                    <option value="dokter">Dokter</option>
+                </select>
+                <br>
+            <input type="submit" value="submit" name="submit">
+        </form>
+</body>
+</html>
+```
+> kemudian akses hasilnya melalui URL:http://localhost/lab7_php_dasar/form_input.php<br>
+> hasil kodingan:<br>
+![gambar15](screenshot/21.png)
+
+### Membuat hasil Input
+* Kemudian membuat hasil inputan formnnya, kodingan seperti ini.
+
+```<?php
+if (isset($_POST['submit'])){ 
+$nama = $_POST['nama'];
+$tgl_lahir = $_POST['tgl_lahir'];
+$pekerjaan = $_POST['pekerjaan'];
+
+function hitung_umur($tgl_lahir){
+	$birthDate = new DateTime($tgl_lahir);
+	$today = new DateTime("today");
+	if ($birthDate > $today) { 
+	    exit("0 tahun 0 bulan 0 hari");
+	}
+	$y = $today->diff($birthDate)->y;
+    return $y." tahun ";
+    
+}
+
+if ($pekerjaan == "guru") {
+    $gaji = "Rp.5500000";
+} elseif ($pekerjaan == "karyawan") {
+    $gaji = "Rp.5200000";
+} elseif ($pekerjaan == "dokter") {
+    $gaji = "Rp.10000000";
+} else {
+}
+
+$umur = hitung_umur($tgl_lahir);
+echo "
+<html>
+        <body>
+            <h1>Form Input</h1>
+            <p>Nama : $nama</p>
+            <p>Tanggal Lahir: $tgl_lahir </p>
+            <p>Pekerjaan : $pekerjaan </p>
+            <p>Umur : $umur </p>
+            <p>Gaji: $gaji </p>
+        </body>
+</html>
+";}
+?>
+```
+
+> Kemudian saat kita klik `submit` pada form input maka hasilnya akan seperti ini
+> contoh gambar:<br>
+![gambar16](screenshot/22.png)
 
