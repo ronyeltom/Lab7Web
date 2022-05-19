@@ -102,7 +102,7 @@ contoh gambar:<br>
     ?>
 ```
 > contoh gambar:<br>
-![gambar9](screenshot/10)
+![gambar9](screenshot/10.png)
 
 ### Kondisi IF
 * Pengambilan keputusan (kondisi IF) digunakan untuk mengantisipasi kondisi yang terjadi saat jalannya program dan menentukan tindakan apa yang akan diambil sesaui dengan kondisi.
