@@ -280,7 +280,7 @@ echo "
 ?>
 ```
 
-> Kemudian saat kita klik `submit` pada form input maka hasilnya akan seperti ini
+> Kemudian saat kita klik `submit` pada form input maka hasilnya akan seperti ini<br>
 > contoh gambar:<br>
 ![gambar16](screenshot/22.png)
 
